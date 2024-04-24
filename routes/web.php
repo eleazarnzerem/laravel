@@ -19,12 +19,16 @@ Route::get('/', function () {
     // return view('welcome');
 
     // fetch
-    $users = DB::select('select * from users where email=?', ['team@contentsupply.com'] );
+    $users = DB::select('select * from users');
 
 
     // create
+    // $users = DB::insert('insert into users (name,email,password) value (?,?,?)', [
+    //     'Eleazar',
+    //     'vicken2020@gmail.com',
+    //     '123455',
+    // ]);
 
-    
     dd($users);
 });
 
