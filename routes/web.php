@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+
+    // fetch
+    $users = DB::select('select * from users where email=?', ['team@contentsupply.com'] );
+
+
+    // create
+
+    
+    dd($users);
 });
 
 Route::get('/dashboard', function () {
