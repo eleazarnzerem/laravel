@@ -19,17 +19,41 @@ Route::get('/', function () {
     // return view('welcome');
 
     // fetch
-    $users = DB::select('select * from users');
+    $users = DB::table('users')->find(2);
 
 
+    // insert
+    // $user = DB::table('users')->insert([
+    //     'name' => 'Kalu',
+    //     'email' => '20victor@gmail.com',
+    //     'password' => 'paswword'
+    // ]);
+
+    // update
+
+
+
+
+    dd($users);
     // create
-    // $users = DB::insert('insert into users (name,email,password) value (?,?,?)', [
+    // $user = DB::insert('insert into users (name,email,password) value (?,?,?)', [
     //     'Eleazar',
     //     'vicken2020@gmail.com',
     //     '123455',
     // ]);
 
-    dd($users);
+    //update
+
+    // $user = DB::update("update users set name=? where id =? ", [
+    //     'Dominioncity',
+    //     2,
+    // ]);
+
+    // delete
+    // $user = DB::delete("delete from users where id=?", [
+    //     2,
+    // ]);
+
 });
 
 Route::get('/dashboard', function () {
