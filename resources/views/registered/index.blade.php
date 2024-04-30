@@ -14,7 +14,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>password</th>
-                    <th>Time</th>
+                    {{-- <th>Time</th> --}}
                 </tr>
                 @foreach ($users as $user)
                     <tr>
@@ -22,7 +22,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->password }}</td>
-                        <td>{{ $user->password }}</td>
+                        {{-- <td>{{ $user->password }}</td> --}}
                     </tr>
                 @endforeach
         </table>
