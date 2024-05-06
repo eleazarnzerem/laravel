@@ -8,7 +8,7 @@
 </head>
 <body>
     Database Tabel
-           <table border="1">
+           <table border="1" class="w-20 bg-red-400 text-white"
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
