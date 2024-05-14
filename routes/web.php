@@ -17,21 +17,8 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-
-
-    $users = DB::select('select * from users');
-
-    // $user = DB::insert('insert into users (name,email,password) values (?,?,?)', [
-    //     'Eleazar',
-    //     'eleazar@gmail.com',
-    //     'password',
-    // ]);
-
-    return view('registered.index', ['users' => $users]);
-
-
-    // dd($users);
+    return view('welcome');
+;
 });
 
 Route::get('/dashboard', function () {
