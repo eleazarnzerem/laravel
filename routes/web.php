@@ -17,8 +17,63 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-;
+    // return view('welcome');
+
+    // $users = DB::select( 'select * from users');
+
+    // insert or create
+
+    // $user =DB::insert('insert into users (name,email,password) value (?,?,?)', ['charles','elezarnze@gmail.com', 'pass1234'] );
+
+
+    // $user = DB::scalar(
+    //     "select count(case when name = 'Eleazar' then 1 end) as two from users"
+    // );
+
+    // update
+    // $user = DB::update(
+    //     "update users set name = 'kelvin' where id = ?", ['1']
+    // );
+
+    
+    // delete
+    // $user = DB::delete('delete from users where id in (?,?,?)', [2, 4, 6]);
+
+
+            // QUARY BUILDER
+    
+
+    $users  = DB::table('users')->get();
+
+    // $users  = DB::table('users')->where('id',1)->get();
+    
+
+
+
+    // $user = DB::table('users')->insert([
+    //         [
+    //             'name' => 'Blessing',
+    //             'email' => 'blessing@gmail.com',
+    //             'password' => 'pass1234',
+    //         ],
+    //         [
+    //             'name' => 'kelvin2',
+    //             'email' => 'kelvin2@gmail.com',
+    //             'password' => 'pass1234',
+    //         ],
+
+    //  ]);
+
+    // $user = DB::table('users')->first('name');
+
+    // UPDATE
+    
+
+    dd($user);
+    // dd($users);
+    // return view('display',['users' => $users]);
+
+    
 });
 
 Route::get('/dashboard', function () {
