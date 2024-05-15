@@ -40,10 +40,13 @@ Route::get('/', function () {
     // $user = DB::delete('delete from users where id in (?,?,?)', [2, 4, 6]);
 
 
+    
+
+
             // QUARY BUILDER
     
 
-    $users  = DB::table('users')->get();
+    // $users  = DB::table('users')->get();
 
     // $users  = DB::table('users')->where('id',1)->get();
     
@@ -64,10 +67,23 @@ Route::get('/', function () {
 
     //  ]);
 
-    // $user = DB::table('users')->first('name');
+    // $user = DB::table('users')->first();
 
     // UPDATE
+    // $user = DB::table('users')->where('id',7)->update(['name' => 'paul']);
+
+    // DELETE
     
+    // $user = DB::table('users')->where('id',9)->delete();
+
+    // $user = DB::table('users')->where('id',7)->value('name');
+    // $user = DB::table('users')->pluck('name');
+
+
+
+
+
+    // ELOQUENT BUILDERS
 
     dd($user);
     // dd($users);
