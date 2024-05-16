@@ -40,7 +40,7 @@ Route::get('/', function () {
     // $user = DB::delete('delete from users where id in (?,?,?)', [2, 4, 6]);
 
 
-    
+
 
 
             // QUARY BUILDER
@@ -84,9 +84,37 @@ Route::get('/', function () {
 
 
     // ELOQUENT BUILDERS
+        
+    $users = User::find(9);
+    
+    // CREATE
+    // $user = User::create([
+    //     'name' => Str::upper('emeka'),
+    //     'email' => 'emeka@gmail.com',
+    //     'password' => 'pass1234',
+    // ]);
 
-    dd($user);
-    // dd($users);
+
+    // UPDATE
+    // $user = User::where('id', 8)->update([
+    //     'name' => 'chisom',
+    //     'email' => 'chisom@gmail.com',
+    // ]);
+
+    // $user = User::first();
+
+    // $user->update(
+    //     ['name' => 'Vincent',]
+    // );
+
+
+    //DELETE
+    // $user = User::where('id',8)->delete();
+    
+
+
+    // dd($user);
+    dd($users->name);
     // return view('display',['users' => $users]);
 
     
