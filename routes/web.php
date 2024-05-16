@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('welcome');
 
     // $users = DB::select( 'select * from users');
 
@@ -85,7 +85,7 @@ Route::get('/', function () {
 
     // ELOQUENT BUILDERS
         
-    $users = User::find(9);
+    // $users = User::find(9);
     
     // CREATE
     // $user = User::create([
@@ -114,7 +114,7 @@ Route::get('/', function () {
 
 
     // dd($user);
-    dd($users->name);
+    // dd($users->name);
     // return view('display',['users' => $users]);
 
     
