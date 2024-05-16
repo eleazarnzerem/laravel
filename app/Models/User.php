@@ -46,9 +46,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected function getNameAttribute($value){
-        return Str::lower($value);
-    }
+    // protected function getNameAttribute($value){
+    //     return Str::lower($value);
+    // }
 
     
     // protected function Name(): Attribute {
@@ -58,11 +58,11 @@ class User extends Authenticatable
     //     );
     // }
 
-    protected function password(): Attribute {
-        return Attribute::make(
+    // protected function password(): Attribute {
+    //     return Attribute::make(
 
-            set: fn ($value) => bcrypt($value),
-        );
-    }
+    //         set: fn ($value) => bcrypt($value),
+    //     );
+    // }
 }
 
