@@ -89,11 +89,11 @@ Route::get('/', function () {
     // $users = User::find(9);
     
     // CREATE
-    // $user = User::create([
-    //     'name' => Str::upper('emeka'),
-    //     'email' => 'emeka@gmail.com',
-    //     'password' => 'pass1234',
-    // ]);
+    $user = User::create([
+        'name' => Str::upper('emeka'),
+        'email' => 'emeka@gmail.com',
+        'password' => 'pass1234',
+    ]);
 
 
     // UPDATE

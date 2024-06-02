@@ -3,6 +3,7 @@
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
             user Avatar
         </h2>
+        <img class="w-20 h-3 rounded-full shadow-2xl" src="{{ "/storage/$user->avater" }}" alt=" User avater" />
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
            Update or Add your Avater
