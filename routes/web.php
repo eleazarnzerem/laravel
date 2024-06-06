@@ -5,6 +5,8 @@ use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Laravel\Socialite\Facades\Socialite;
+use OpenAI\Laravel\Facades\OpenAI;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,11 +91,11 @@ Route::get('/', function () {
     // $users = User::find(9);
     
     // CREATE
-    $user = User::create([
-        'name' => Str::upper('emeka'),
-        'email' => 'emeka@gmail.com',
-        'password' => 'pass1234',
-    ]);
+    // $user = User::create([
+    //     'name' => Str::upper('emeka'),
+    //     'email' => 'emeka@gmail.com',
+    //     'password' => 'pass1234',
+    // ]);
 
 
     // UPDATE
@@ -132,4 +134,29 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
 require __DIR__.'/auth.php';
+
+// Route::get('/openai', function (){
+
+//     $result = OpenAI::chat()->create([
+    //         'model' => 'gpt-3.5-turbo',
+    //         'messages' => [
+//             ['role' => 'user', 'content' => 'Hello!'],
+//         ],
+//     ]);
+    
+//     echo $result->choices[0]->message->content;
+// });
+    
+    // Route::get('/auth/redirect', function () {
+    //     return Socialite::driver('github')->redirect();
+    // });
+    
+    
+    // Route::get('/auth/callback', function () {
+    //     $user = Socialite::driver('github')->user();
+     
+    //     // $user->token
+    // });

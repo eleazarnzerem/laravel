@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Storage;
 class AvatarController extends Controller
 {
     protected function update(UpdateAvatarRequest $request){
-        
-        $path = $request->file('avater')->store('avatar', 'public');
+
+
+        // $path = $request->file('avater')->store('avatar', 'public');
+        $path = storage::disk('public')->put('avatar',$request->file('avater'));
 
         if ($oldAvatar = $request->user()->avater ) {
             Storage::disk('public')->delete($oldAvatar);
