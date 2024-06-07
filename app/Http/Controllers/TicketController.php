@@ -13,15 +13,16 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        // return view('ticket.create');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('ticket.create');
+
     }
 
     /**

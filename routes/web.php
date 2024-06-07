@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\profile\AvatarController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TicketController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -160,3 +161,10 @@ require __DIR__.'/auth.php';
      
     //     // $user->token
     // });
+    
+    Route::middleware('auth')->prefix('ticket')->group(function () {
+        Route::resource('/', TicketController::class);
+        // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+        // Route::post('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+    }); 
+
