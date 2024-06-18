@@ -139,17 +139,22 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// Route::get('/openai', function (){
+Route::get('/openai', function (){
 
-//     $result = OpenAI::chat()->create([
-    //         'model' => 'gpt-3.5-turbo',
-    //         'messages' => [
-//             ['role' => 'user', 'content' => 'Hello!'],
-//         ],
-//     ]);
+    $result = OpenAI::images()->create([
+            // 'model' => 'gpt-3.5-turbo',
+            // 'messages' => [
+            // ['role' => 'user', 'content' => 'Hello!'],
+            "model" => "dall-e-3",
+            "prompt" => "A cute baby sea otter",
+            "n" => 1,
+            "size" => "1024x1024",
+    ]);
+
+    dd($result);
     
-//     echo $result->choices[0]->message->content;
-// });
+    echo $result->choices[0]->message->content;
+});
     
     // Route::get('/auth/redirect', function () {
     //     return Socialite::driver('github')->redirect();
@@ -162,7 +167,7 @@ require __DIR__.'/auth.php';
     //     // $user->token
     // });
     
-    Route::middleware('auth')->prefix('ticket')->group(function () {
+    Route::middleware('auth')->prefix('ticket')->name('ticket.')->group(function () {
         Route::resource('/', TicketController::class);
         // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
         // Route::post('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
