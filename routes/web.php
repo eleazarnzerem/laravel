@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Laravel\Socialite\Facades\Socialite;
-use OpenAI\Laravel\Facades\OpenAI;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,37 +132,22 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile/avatar', [AvatarController::class, 'update'])->name('profile.avatar');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::post('/profile/avatar/generate',[AvatarController::class,'generated'])->name('avatar.ai'); 
 });
 
 
 
 require __DIR__.'/auth.php';
 
-Route::get('/openai', function (){
-
-    $result = OpenAI::images()->create([
-            // 'model' => 'gpt-3.5-turbo',
-            // 'messages' => [
-            // ['role' => 'user', 'content' => 'Hello!'],
-            "model" => "dall-e-3",
-            "prompt" => "A cute baby sea otter",
-            "n" => 1,
-            "size" => "1024x1024",
-    ]);
-
-    dd($result);
-    
-    echo $result->choices[0]->message->content;
-});
-    
+  
     // Route::get('/auth/redirect', function () {
     //     return Socialite::driver('github')->redirect();
     // });
     
-    
     // Route::get('/auth/callback', function () {
     //     $user = Socialite::driver('github')->user();
-     
+    
     //     // $user->token
     // });
     
